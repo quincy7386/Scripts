@@ -1,0 +1,4 @@
+name=three_http_headers rule="http.request exists && http.request count l-3 && service = 80 && ir.general != two_http_headers" order=138 alert=ir.general type=application
+name=bad_ssl rule="alias.host = 'localhost' && service = 443 && ir.general!=rfc1918_dst" order=194 alert=ir.general type=application
+name=webshell_indicator rule="ir.general = 'http_post_no_get' extension = 'php','jsp','class','java','cfm','cgi','dll','pl'" order=216 alert=ir.general transient type=application
+name=webshell_indicator rule="query contains 'c\\:\\\\','d\\:\\\\','e\\:\\\\','f\\:\\\\','g\\:\\\\','h\\:\\\\' && ir.general = 'http_post_no_get'" order=218 alert=ir.general transient type=application

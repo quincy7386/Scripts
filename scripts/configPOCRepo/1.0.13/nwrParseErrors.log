@@ -1,0 +1,3 @@
+name=netwitness rule="ip.src = <customer_netwitness_ip_list>" order=2 alert=netname.src type=application
+name=netwitness rule="ip.dst = <customer_netwitness_ip_list>" order=3 alert=netname.dst type=application
+name=local_suffix rule="alias.host ends '<customer's domain suffixes>'" order=5 alert=ir.general transient type=application
